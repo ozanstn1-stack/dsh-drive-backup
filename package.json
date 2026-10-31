@@ -1,0 +1,57 @@
+{
+  "name": "dsh-drive-backup",
+  "version": "0.1.0",
+  "description": "rclone backup tooling for DeepSeek Harness",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ozanstn1-stack/dsh-drive-backup.git"
+  },
+  "homepage": "https://github.com/ozanstn1-stack/dsh-drive-backup#readme",
+  "bugs": {
+    "url": "https://github.com/ozanstn1-stack/dsh-drive-backup/issues"
+  },
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "cordis.patch.yml",
+    "README.md",
+    "README.tr.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0",
+    "dsh": ">=0.2.1-rc.4"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "scripts": {
+    "test": "node --test",
+    "link-peers": "node scripts/link-peers.mjs"
+  },
+  "license": "MIT",
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "dsh",
+    "cordis",
+    "backup"
+  ],
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.0.5",
+    "@deepseek-ai/dsh-system-prompt": ">=0.2.1-rc.4",
+    "@deepseek-ai/dsh-tools": ">=0.2.1-rc.4",
+    "@deepseek-ai/dsh-user-approval": ">=0.2.1-rc.4",
+    "@deepseek-ai/schemastery": "~3.18.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
